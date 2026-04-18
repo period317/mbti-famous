@@ -38,7 +38,7 @@ export async function GET(req: NextRequest) {
     }
   }
 
-  if (sort === 'views_desc' || sort === 'views') query = query.order('view_count', { ascending: false })
+  if (sort === 'views_desc') query = query.order('view_count', { ascending: false })
   else if (sort === 'views_asc') query = query.order('view_count', { ascending: true })
   else if (sort === 'age_asc') query = query.order('birth_year', { ascending: true, nullsFirst: false })
   else if (sort === 'age_desc') query = query.order('birth_year', { ascending: false, nullsFirst: false })
