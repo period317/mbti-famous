@@ -20,34 +20,26 @@ export default function Header() {
     }
   }
 
-  const navLinks = [
-    { href: '/people', label: '전체 인물' },
-    { href: '/vote', label: '투표' },
-  ]
-
   return (
     <header className="bg-white border-b border-[#E5E5E3] sticky top-0 z-50">
       <div className="max-w-5xl mx-auto px-5 h-14 flex items-center justify-between gap-6">
 
-        <Link href="/" className="flex items-center gap-1.5 shrink-0">
-          <span className="text-[15px] font-bold tracking-tight text-[#111111]">MBTI</span>
-          <span className="text-[15px] font-light text-[#111111] tracking-tight">Famous</span>
+        <Link href="/people" className="flex items-center gap-1 shrink-0">
+          <span className="text-[15px] font-black tracking-tight text-[#111111]">MBTI</span>
+          <span className="text-[15px] font-light text-[#111111] tracking-tight ml-1">인물사전</span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-1">
-          {navLinks.map(l => (
-            <Link
-              key={l.href}
-              href={l.href}
-              className={`px-3 py-1.5 rounded-lg text-[13px] font-medium transition-colors ${
-                pathname === l.href
-                  ? 'text-[#111111] bg-[#F0F0EE]'
-                  : 'text-[#6B6B6B] hover:text-[#111111] hover:bg-[#F7F7F5]'
-              }`}
-            >
-              {l.label}
-            </Link>
-          ))}
+          <Link
+            href="/vote"
+            className={`px-3 py-1.5 rounded-lg text-[13px] font-medium transition-colors ${
+              pathname === '/vote'
+                ? 'text-[#111111] bg-[#F0F0EE]'
+                : 'text-[#6B6B6B] hover:text-[#111111] hover:bg-[#F7F7F5]'
+            }`}
+          >
+            투표
+          </Link>
         </nav>
 
         <div className="flex items-center gap-1">

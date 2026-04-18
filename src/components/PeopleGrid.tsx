@@ -117,7 +117,7 @@ export default function PeopleGrid() {
 
       {/* 로딩 스켈레톤 */}
       {loading && viewMode === 'card' && (
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3">
+        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-7 gap-2">
           {Array.from({ length: 24 }).map((_, i) => (
             <div key={i} className="bg-white rounded-2xl overflow-hidden border border-gray-100 animate-pulse">
               <div className="aspect-square bg-gray-100" />
@@ -155,7 +155,7 @@ export default function PeopleGrid() {
 
       {/* 카드 뷰 */}
       {!loading && !!data?.people?.length && viewMode === 'card' && (
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3">
+        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-7 gap-2">
           {data.people.map(person => (
             <PersonCard
               key={person.id}
